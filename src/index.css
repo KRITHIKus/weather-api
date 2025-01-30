@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Outfit', 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+p {
+  font-size: 1.6rem;
+}
+
+h1 {
+  font-size: 6rem;
+}
+
+.app {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensures content is spaced within the app */
+  overflow: hidden;
+}
+
+.app:before {
+  content: '';
+  background: url('./assests/earth.jpeg') no-repeat center center/cover;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  filter: brightness(0.6); /* Darken background for better text visibility */
+}
+
+.app .search {
+  text-align: center;
+  padding: 1rem;
+}
+
+.app input {
+  padding: 0.7rem 1.5rem;
+  font-size: 1.2rem;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.1);
+  color: #f8f8f8;
+}
+
+::placeholder {
+  color: #f8f8f8;
+}
+
+.container {
+  max-width: 700px;
+  margin: auto;
+  padding: 0 1rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 90%; /* Ensures full layout visibility within the viewport */
+}
+
+.app .top {
+  width: 100%;
+  text-align: center;
+}
+
+.app .description {
+  position: absolute;
+  top: 50%; /* Adjusted for proper alignment */
+  right: 5%;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 1.2rem;
+  letter-spacing: 0.1rem;
+}
+.app .bottom {
+  display: flex;
+  justify-content: space-evenly; /* Ensures equal space between items */
+  align-items: center; /* Vertically centers the contents */
+  text-align: center;
+  width: 100%;
+  padding: 1.5rem; /* Increased padding for a cleaner layout */
+  border-radius: 12px;
+  background-color: rgba(0, 0, 0, 0.5); /* Transparent background */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4); /* Subtle shadow */
+}
+
+.app .bottom div {
+  flex: 1; /* Ensures equal space for each item */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers each div's content */
+  margin: 0 0.5rem; /* Adds space between the child divs */
+}
+
+.app .bottom div span {
+  font-size: 1rem; /* Standard font size */
+  color: #f8f8f8;
+  margin: 0.3rem 0; /* Adds spacing between text lines */
+}
+
+.app .bottom div span.bold {
+  font-size: 1.3rem; /* Slightly larger for bold text */
+  font-weight: bold;
+}
+
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 4rem;
+  }
+
+  .app .description {
+    font-size: 1rem;
+    top: 45%;
+    right: 3%;
+  }
+
+  .app .bottom {
+    flex-wrap: wrap; /* Allows items to wrap if space is limited */
+    gap: 1rem; /* Adds spacing between wrapped rows */
+    padding: 1rem;
+  }
+
+  .app .bottom div {
+    flex: 0 1 45%; /* Each item takes up 45% of the width on smaller screens */
+    margin-bottom: 1rem; /* Adds spacing for wrapped items */
+  }
+}
